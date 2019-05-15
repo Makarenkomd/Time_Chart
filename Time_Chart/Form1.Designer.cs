@@ -28,6 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.buttonStart = new System.Windows.Forms.Button();
             this.labelTimeStart = new System.Windows.Forms.Label();
             this.labelTimeEnd = new System.Windows.Forms.Label();
@@ -37,6 +40,9 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.labelParam = new System.Windows.Forms.Label();
+            this.buttonChart = new System.Windows.Forms.Button();
+            this.chartFunction = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            ((System.ComponentModel.ISupportInitialize)(this.chartFunction)).BeginInit();
             this.SuspendLayout();
             // 
             // buttonStart
@@ -115,12 +121,11 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label4.Location = new System.Drawing.Point(322, 125);
+            this.label4.Location = new System.Drawing.Point(268, 125);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(278, 31);
             this.label4.TabIndex = 8;
             this.label4.Text = "Значение параметра";
-            
             // 
             // labelParam
             // 
@@ -131,13 +136,42 @@
             this.labelParam.Size = new System.Drawing.Size(59, 31);
             this.labelParam.TabIndex = 7;
             this.labelParam.Text = "100";
-            
+            // 
+            // buttonChart
+            // 
+            this.buttonChart.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonChart.Location = new System.Drawing.Point(552, 52);
+            this.buttonChart.Name = "buttonChart";
+            this.buttonChart.Size = new System.Drawing.Size(316, 52);
+            this.buttonChart.TabIndex = 9;
+            this.buttonChart.Text = "построить график";
+            this.buttonChart.UseVisualStyleBackColor = true;
+            this.buttonChart.Click += new System.EventHandler(this.buttonChart_Click);
+            // 
+            // chartFunction
+            // 
+            chartArea1.Name = "ChartArea1";
+            this.chartFunction.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chartFunction.Legends.Add(legend1);
+            this.chartFunction.Location = new System.Drawing.Point(552, 125);
+            this.chartFunction.Name = "chartFunction";
+            series1.ChartArea = "ChartArea1";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.chartFunction.Series.Add(series1);
+            this.chartFunction.Size = new System.Drawing.Size(495, 300);
+            this.chartFunction.TabIndex = 10;
+            this.chartFunction.Text = "chart1";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1059, 450);
+            this.Controls.Add(this.chartFunction);
+            this.Controls.Add(this.buttonChart);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.labelParam);
             this.Controls.Add(this.label3);
@@ -149,6 +183,7 @@
             this.Controls.Add(this.buttonStart);
             this.Name = "Form1";
             this.Text = "Form1";
+            ((System.ComponentModel.ISupportInitialize)(this.chartFunction)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -165,6 +200,8 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label labelParam;
+        private System.Windows.Forms.Button buttonChart;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chartFunction;
     }
 }
 
