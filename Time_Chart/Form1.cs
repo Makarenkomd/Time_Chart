@@ -22,6 +22,14 @@ namespace Time_Chart
 
         }
 
+        int countDivides(int a)
+        {
+            int count = 0;
+            for (int i = 0; i < a; i++)
+                if (a % i == 0) count++;
+            return count;
+
+        }
         private void buttonStart_Click(object sender, EventArgs e)
         {
             DateTime timeStart = DateTime.Now;
