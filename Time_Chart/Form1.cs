@@ -21,5 +21,11 @@ namespace Time_Chart
         {
 
         }
+
+        private void buttonStart_Click(object sender, EventArgs e)
+        {
+            DateTime timeStart = DateTime.Now;
+            labelTimeStart.Text = timeStart.ToString();
+        }
     }
 }

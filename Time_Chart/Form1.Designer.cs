@@ -46,6 +46,7 @@
             this.buttonStart.TabIndex = 0;
             this.buttonStart.Text = "запустить  функцию";
             this.buttonStart.UseVisualStyleBackColor = true;
+            this.buttonStart.Click += new System.EventHandler(this.buttonStart_Click);
             // 
             // labelTimeStart
             // 
